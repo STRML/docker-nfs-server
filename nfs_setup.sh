@@ -10,4 +10,7 @@ for mnt in "${mounts[@]}"; do
   echo "$src *(rw,sync,no_subtree_check,fsid=0,no_root_squash)" >> /etc/exports
 done
 
+echo "nfs 2049/tcp" >> /etc/services
+echo "nfs 2049/udp" >> /etc/services
+
 exec runsvdir /etc/sv
